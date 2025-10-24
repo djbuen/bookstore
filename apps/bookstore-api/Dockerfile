@@ -8,7 +8,6 @@ WORKDIR /usr/src/app
 # Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-
 # Install the app dependencies
 RUN npm install
 
@@ -17,9 +16,3 @@ RUN npm add --global nx
 
 # Copy the app source code to the working directory
 COPY . .
-
-# Expose port 3000 for the app
-# EXPOSE 3000
-
-# Start the app
-# CMD ["npx", "nx", "serve", "bookstore-api"]
