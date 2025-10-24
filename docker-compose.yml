@@ -13,6 +13,19 @@ services:
       - app-network
     working_dir: /usr/src/app
     command: nx serve bookstore-api
+  bookstore-fe:
+    build: ./apps/bookstore-fe
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 4200:4200
+    environment:
+      - PORT=4200 #expose port 3000
+      - HOST=0.0.0.0 #bind to all interface so it would be accessible from outside the container
+    networks:
+      - app-network
+    working_dir: /usr/src/app
+    command: nx serve bookstore-fe
 networks:
   app-network:
     driver: bridge
