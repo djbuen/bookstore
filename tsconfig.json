@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./apps/bookstore-api"
+    },
+    {
+      "path": "./apps/bookstore-fe"
     }
   ]
 }
