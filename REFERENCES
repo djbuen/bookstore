@@ -10,3 +10,8 @@ https://nx.dev/docs/technologies/node/introduction
 
 Adding tailwind to the project
 https://nx.dev/docs/technologies/react/guides/using-tailwind-css-in-react
+
+Dockerfile generation references
+https://medium.com/@ronderksen/using-docker-compose-to-run-your-nx-apps-together-2fcce26df436
+https://javascript.plainenglish.io/dockerizing-your-nx-monorepo-seamless-deployment-for-react-and-nestjs-apps-cb5b53e29fe7?gi=b6a6fbe4b816
+https://www.reddit.com/r/node/comments/16gx2ue/dockerize_nx_monorepo_app/
