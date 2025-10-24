@@ -1,8 +1,8 @@
-1. Read requirements 
-2. Choose tech stack
+1. Read requirements - done
+2. Choose tech stack(node,react,mongodb,docker,nx) - done
 3. Env setup
-  * setup monorepo
-  * setup docker
+  * setup monorepo - done
+  * setup docker - done
   * add db
   * created DB schema
   * gather books data
