@@ -1,4 +1,4 @@
-import type { ResourceController } from '../types/resources';
+import type { ResourceController } from '../types/resource';
 
 // =============================
 // Mock Data

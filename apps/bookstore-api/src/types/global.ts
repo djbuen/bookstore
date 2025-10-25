@@ -1,5 +1,5 @@
 
-import { ResourceController } from './';
+import { ResourceController } from '.';
 // Extend Express types safely
 declare global {
   namespace Express {

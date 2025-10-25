@@ -1,1 +1,1 @@
-export type { ResourceController } from "./resources";
+export type { ResourceController } from "./resource";
