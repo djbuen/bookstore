@@ -1,9 +1,10 @@
 1. Read requirements - done
-2. Choose tech stack(node,react,mongodb,docker,nx) - done
+2. Choose tech stack(node,react,sqlite,docker,nx) - done
 3. Env setup
   * setup monorepo - done
   * setup docker - done
-  * add db service(mongodb)
+  * api file structure - done
+  * add db service(sqlite)
   * created DB schema
   * gather books data
 4. Backend development
