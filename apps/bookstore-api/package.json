@@ -10,6 +10,18 @@
           "command": "npx prisma migrate dev --name init --schema=apps/bookstore-api/prisma/schema.prisma"
         }
       },
+      "rollback": {
+          "executor": "nx:run-commands",
+          "options": {
+            "command": "npx prisma migrate reset --force --schema=apps/bookstore-api/prisma/schema.prisma"
+          }
+      },
+      "reset-db": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npx prisma migrate reset --force --schema=apps/bookstore-api/prisma/schema.prisma && npx ts-node --transpile-only apps/bookstore-api/prisma/seed.ts"
+        }
+      },
       "build": {
         "executor": "@nx/esbuild:esbuild",
         "outputs": [

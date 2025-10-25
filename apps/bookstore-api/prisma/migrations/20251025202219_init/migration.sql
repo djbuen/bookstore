@@ -14,7 +14,8 @@ CREATE TABLE "Book" (
     "content" TEXT,
     "date_published" DATETIME NOT NULL,
     "author" TEXT NOT NULL,
-    "price" REAL NOT NULL
+    "price" REAL NOT NULL,
+    "imageUrl" TEXT
 );
 
 -- CreateTable
