@@ -1,12 +1,11 @@
 import express, { Application } from 'express';
+import * as UserController from '../controllers';
 // =============================
 // Express App Setup
 // =============================
 const app: Application = express();
 
-app.get("/", (req, res) => {
-  res.send("Get all users");
-});
+app.get("/", UserController.getAllUsers);
 
 app.get("/:userID", (req, res) => {
   res.send("Get an existing user");

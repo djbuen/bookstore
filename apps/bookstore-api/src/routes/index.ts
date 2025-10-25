@@ -5,7 +5,7 @@ import userRoute from './user.route';
 // =============================
 const app: Application = express();
 
-app.use('/api/v1', (req, res) => {  return res.send('Welcome to Bookstore API v1'); });
+app.get('/api/v1', (req, res) => {  return res.send('Welcome to Bookstore API v1'); });
 app.use('/api/v1/users', userRoute);
 
 export { app };
