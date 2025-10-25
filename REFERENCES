@@ -19,3 +19,11 @@ Dockerfile generation references
 https://medium.com/@ronderksen/using-docker-compose-to-run-your-nx-apps-together-2fcce26df436
 https://javascript.plainenglish.io/dockerizing-your-nx-monorepo-seamless-deployment-for-react-and-nestjs-apps-cb5b53e29fe7?gi=b6a6fbe4b816
 https://www.reddit.com/r/node/comments/16gx2ue/dockerize_nx_monorepo_app/
+
+NodeJS Express and route mapping
+https://expressjs.com/en/starter/examples.html
+https://medium.com/@jonoyanguren/mvc-pattern-in-nodejs-and-express-old-but-gold-46c21bee365a
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/routes
+
+NodeJS API and ORM 
+https://medium.com/@basu.abhirup27/build-your-first-rest-api-in-10-minutes-using-node-js-and-mongodb-2c15ac29e413

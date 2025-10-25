@@ -3,7 +3,7 @@
 3. Env setup
   * setup monorepo - done
   * setup docker - done
-  * add db
+  * add db service(mongodb)
   * created DB schema
   * gather books data
 4. Backend development
