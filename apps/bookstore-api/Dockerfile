@@ -1,4 +1,4 @@
-# Use an official Node runtime as the base image
+#p Use an official Node runtime as the base image
 FROM node:24
 
 # Set the working directory in the Docker container
@@ -16,3 +16,5 @@ RUN npm add --global nx
 
 # Copy the app source code to the working directory
 COPY . .
+
+RUN npx prisma generate --schema=apps/bookstore-api/prisma/schema.prisma

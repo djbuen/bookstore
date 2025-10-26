@@ -24,6 +24,30 @@ NodeJS Express and route mapping
 https://expressjs.com/en/starter/examples.html
 https://medium.com/@jonoyanguren/mvc-pattern-in-nodejs-and-express-old-but-gold-46c21bee365a
 https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/routes
+https://www.freecodecamp.org/news/rest-api-design-best-practices-build-a-rest-api/
+
+Restful API
+https://blog.postman.com/how-to-create-a-rest-api-with-node-js-and-express/
+https://restfulapi.net/http-methods/
 
 NodeJS API and ORM 
 https://medium.com/@basu.abhirup27/build-your-first-rest-api-in-10-minutes-using-node-js-and-mongodb-2c15ac29e413
+
+PRISMA + SQLITE GUIDE
+https://www.prisma.io/docs/getting-started/quickstart-sqlite
+
+PRISMA SETUP GUIDE
+https://www.prisma.io/docs/guides/docker
+
+PRISMA QUICK GUIDE + DATA TYPES
+https://dev.to/keshav___dev/prisma-recap-everything-you-need-in-5-minutes-cheat-sheet-19m6
+https://www.prisma.io/docs/orm/prisma-client/special-fields-and-types
+
+PRISMA CHEATSHEET
+https://yourdevkit.com/cheat-sheet/prisma
+
+PRISMA RELATION
+https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/relation-mode
+
+PRISMA MIGRATION
+https://www.prisma.io/docs/guides/data-migration
