@@ -1,16 +1,13 @@
-const users = [
-  { name: 'tj' },
-  { name: 'ciaran' },
-  { name: 'aaron' },
-  { name: 'guillermo' },
-  { name: 'simon' },
-  { name: 'tobi' },
-];
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
 
-const User = {
-    all: () => {
-        return users;
+export class UserModel {
+  static async getAll(): Promise<any[]> {
+    try {
+      return await prisma.user.findMany();
+    } catch (error) {
+      console.error('Error fetching all users:', error);
+      throw new Error('Failed to fetch users');
     }
+  }
 }
-
-export default User;

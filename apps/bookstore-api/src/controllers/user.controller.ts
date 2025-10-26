@@ -1,18 +1,20 @@
 import { Request, Response } from 'express';
-// =============================
-// Mock Data
-// =============================
-const users = [
-  { name: 'tj' },
-  { name: 'ciaran' },
-  { name: 'aaron' },
-  { name: 'guillermo' },
-  { name: 'simon' },
-  { name: 'tobi' },
-];
+import * as UserService from '../services/user.service';
 
-const getAllUsers = (req: any, res: Response) => {
-  res.send({ message: "Get all users", payload: req.params, users });
+const getAllUsers = async (req: Request, res: Response) => {
+  try {
+    const users = await UserService.getAllUsers();
+    res.send({
+      message: "Get all users",
+      payload: req.params,
+      users,
+    });
+  } catch (error: any) {
+    res.status(500).send({
+      message: "Failed to fetch users",
+      error: error.message,
+    });
+  }
 };
 
 const getOneUser = (req: Request, res: Response) => {
