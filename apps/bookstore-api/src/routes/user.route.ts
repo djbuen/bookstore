@@ -7,9 +7,7 @@ const app: Application = express();
 
 app.get("/", UserController.getAllUsers);
 
-app.get("/:userID", (req, res) => {
-  res.send("Get an existing user");
-});
+app.get("/:userID", UserController.getUser);
 
 app.post("/", (req, res) => {
   res.send("Create a new user");

@@ -17,8 +17,21 @@ const getAllUsers = async (req: Request, res: Response) => {
   }
 };
 
-const getOneUser = (req: Request, res: Response) => {
-  res.send({ message: "Get an existing user", payload: req.params });
+const getUser = async (req: Request, res: Response) => {
+  const userID = parseInt(req.params.userID);
+  try {
+    const user = await UserService.findUser(userID);
+    res.send({
+      message: "Get user",
+      payload: req.params,
+      user,
+    });
+  } catch (error: any) {
+    res.status(500).send({
+      message: "Failed to fetch users",
+      error: error.message,
+    });
+  }
 };
 
 const createNewUser = (req: Request, res: Response) => {
@@ -35,7 +48,7 @@ const deleteOneUser = (req: Request, res: Response) => {
   
 export { 
   getAllUsers,
-  getOneUser,
+  getUser,
   createNewUser,
   updateOneUser,
   deleteOneUser,
