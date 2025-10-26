@@ -13,7 +13,6 @@ docker compose build --no-cache && docker compose up --force-recreate
 ```
 
 ### v1 legacy
-
 ```sh
 # Build without cache
 docker-compose build --no-cache
@@ -25,6 +24,23 @@ docker-compose up --force-recreate
 force rebuild
 ```sh
 docker compose build --no-cache && docker compose up --force-recreate -d
+```
+
+### Troubleshoot
+Sometimes the app is stuck steps to fix
+Step 1: While the container is running, Execute command
+```sh
+docker compose exec bookstore-api npx nx reset
+```
+
+Step 2: Stop the container
+```sh
+docker compose down
+```
+
+Step 3: Restart
+```sh
+docker compose up
 ```
 
 ## Useful links
