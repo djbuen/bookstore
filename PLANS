@@ -4,13 +4,16 @@
   * setup monorepo - done
   * setup docker - done
   * api file structure - done
-  * add db service(sqlite)
-  * created DB schema
-  * gather books data
+  * add db service(sqlite) - done
+  * created DB schema - done
 4. Backend development
-  * create migration task to populate book data
-  * Add ORM in API
+  * gather books data
+  * create migration task to populate book data 
   * Make CRUD
+    * users(authentication) - login, register
+    * books - find by author, title, genre
+    * favorites - add, remove, list
+  * Add ORM in API - done
   * API testing
 5. Frontend development
   * Make a draft of the UI, layout
