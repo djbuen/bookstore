@@ -1,22 +1,31 @@
 import { PrismaClient } from '@prisma/client';
+import { randomBytes } from 'crypto';
+
+function generatePassword(length = 12) {
+  return randomBytes(length).toString('base64').slice(0, length);
+}
 
 const prisma = new PrismaClient();
 
 async function main() {
+  console.log('Truncating users table...');
+  await prisma.user.deleteMany({});
   console.log('Seeding database...');
 
   // Create users
   const user1 = await prisma.user.create({
     data: {
-      username: 'john_doe',
-      name: 'John Doe',
+      username: 'svorontsov',
+      name: 'Sergie',
+      password: generatePassword(),
     },
   });
 
   const user2 = await prisma.user.create({
     data: {
-      username: 'jane_doe',
-      name: 'Jane Doe',
+      username: 'dbuenconsejo',
+      name: 'Dave',
+      password: generatePassword(),
     },
   });
 

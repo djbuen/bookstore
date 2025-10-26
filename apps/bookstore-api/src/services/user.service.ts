@@ -1,7 +1,15 @@
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
+// import { PrismaClient } from '@prisma/client';
+let prisma: any;
+
+export const getPrisma = () => {
+  if (!prisma) {
+    const { PrismaClient } = require('@prisma/client');
+    prisma = new PrismaClient();
+  }
+  return prisma;
+};
 const getAllUsers = async () => {
-    return await prisma.user.findMany();
+    return await getPrisma().user.findMany();
 }
 
 const getOneUser = (userID: string) => {

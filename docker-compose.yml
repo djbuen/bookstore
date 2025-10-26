@@ -1,9 +1,20 @@
 version: '3.9'
 services:
+  # npm-install:
+  #   build: ./apps/bookstore-api  # Path to the app you're building
+  #   volumes:
+  #     - ./:/usr/src/app  # Mount the root folder (where package.json is) into the container
+  #   working_dir: /usr/src/app  # Working directory for npm install
+  #   command: npm install  # Run npm install as the entry command
+  #   networks:
+  #     - app-network
   bookstore-api:
-    build: ./apps/bookstore-api
+    build:
+      context: ./
+      dockerfile: apps/bookstore-api/Dockerfile
     volumes:
       - ./:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
       - 3000:3000
     environment:
@@ -13,10 +24,14 @@ services:
       - app-network
     working_dir: /usr/src/app
     command: nx serve bookstore-api
+    # command: node apps/bookstore-api/dist/main.js
   bookstore-fe:
-    build: ./apps/bookstore-fe
+    build:
+      context: ./
+      dockerfile: apps/bookstore-fe/Dockerfile
     volumes:
       - ./:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
       - 4200:4200
     environment:
