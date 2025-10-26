@@ -1,9 +1,4 @@
 import { PrismaClient } from '@prisma/client';
-import { randomBytes } from 'crypto';
-
-function generatePassword(length = 12) {
-  return randomBytes(length).toString('base64').slice(0, length);
-}
 
 const prisma = new PrismaClient();
 
@@ -17,7 +12,7 @@ async function main() {
     data: {
       username: 'svorontsov',
       name: 'Sergie',
-      password: generatePassword(),
+      password: 'rN5G3ZzaNyqi',
     },
   });
 
@@ -25,7 +20,7 @@ async function main() {
     data: {
       username: 'dbuenconsejo',
       name: 'Dave',
-      password: generatePassword(),
+      password: 'DCytjWLjUYHY',
     },
   });
 

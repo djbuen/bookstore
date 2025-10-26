@@ -23,7 +23,8 @@ services:
     networks:
       - app-network
     working_dir: /usr/src/app
-    command: nx serve bookstore-api
+    command: sh -c "npx nx run @bookstore/bookstore-api:migrate && npx nx run @bookstore/bookstore-api:seed && nx serve bookstore-api"
+    # command: nx serve bookstore-api
     # command: node apps/bookstore-api/dist/main.js
   bookstore-fe:
     build:
