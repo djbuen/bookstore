@@ -7,11 +7,11 @@
   * add db service(sqlite) - done
   * created DB schema - done
 4. Backend development
-  * gather books data
-  * create migration task to populate book data 
+  * gather books data(done)
+  * create migration task to populate book data (done)
   * Make CRUD
     * users(authentication) - login, register
-    * books - find by author, title, genre
+    * books - list(done),find by author, title
     * favorites - add, remove, list
   * Add ORM in API - done
   * API testing
