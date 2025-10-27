@@ -29,9 +29,15 @@
 
 Checklist
 1. Responsive UI
-2. Book CRUD, 
+2. Book CRUD(API only), 
+   User can browser books
    search by title and author,
    book details
 3. DB Schema
 4. Error Handling in FE and API
 5. Documentation
+
+Bonus
+* User login
+* Favorites
+* Tests
