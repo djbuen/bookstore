@@ -1,13 +1,5 @@
 version: '3.9'
 services:
-  # npm-install:
-  #   build: ./apps/bookstore-api  # Path to the app you're building
-  #   volumes:
-  #     - ./:/usr/src/app  # Mount the root folder (where package.json is) into the container
-  #   working_dir: /usr/src/app  # Working directory for npm install
-  #   command: npm install  # Run npm install as the entry command
-  #   networks:
-  #     - app-network
   bookstore-api:
     build:
       context: ./
@@ -20,8 +12,6 @@ services:
     environment:
       - PORT=3000 #expose port 3000
       - HOST=0.0.0.0 #bind to all interface so it would be accessible from outside the container
-    networks:
-      - app-network
     working_dir: /usr/src/app
     command: sh -c "npx nx run @bookstore/bookstore-api:migrate && npx nx run @bookstore/bookstore-api:seed && nx serve bookstore-api"
     # command: nx serve bookstore-api
@@ -38,10 +28,8 @@ services:
     environment:
       - PORT=4200 #expose port 3000
       - HOST=0.0.0.0 #bind to all interface so it would be accessible from outside the container
-    networks:
-      - app-network
     working_dir: /usr/src/app
     command: nx serve bookstore-fe
-networks:
-  app-network:
-    driver: bridge
+# networks:
+#   app-network:
+#     driver: bridge
