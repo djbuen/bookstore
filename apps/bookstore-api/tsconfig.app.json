@@ -5,6 +5,7 @@
     "types": ["node"],
     "rootDir": "src",
     "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo",
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@utils/*": ["utils/*"],

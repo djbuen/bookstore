@@ -55,3 +55,6 @@ https://www.prisma.io/docs/guides/data-migration
 
 DB SEED REFERENCE
 https://leaderandlearner.substack.com/p/the-30-best-nonfiction-books-ive
+
+CORS SETUP
+https://expressjs.com/en/resources/middleware/cors.html
