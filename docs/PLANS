@@ -9,9 +9,9 @@
 4. Backend development
   * gather books data(done)
   * create migration task to populate book data (done)
-  * Make CRUD
+  * Make API Operations
     * users(authentication) - login, register
-    * books - list(done),find by author, title
+    * books - list(done), CRUD
     * favorites - add, remove, list
   * Add ORM in API - done
   * API testing
@@ -22,5 +22,16 @@
   * Create reusable components
   * Make test
   * Integrate FE and API
-  
-  
+  * Features
+    * books 
+      - view book details
+      - search by books by title and author,
+
+Checklist
+1. Responsive UI
+2. Book CRUD, 
+   search by title and author,
+   book details
+3. DB Schema
+4. Error Handling in FE and API
+5. Documentation

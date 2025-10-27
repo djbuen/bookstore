@@ -1,5 +1,7 @@
 # Bookstore
 
+All the related documentation can be found under ./docs folder.
+
 ## Run the app
 
 ### Mac Docker Compose v2 client

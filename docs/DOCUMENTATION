@@ -1,0 +1,15 @@
+### Architecture
+The tech stack I chose is node(api), react(fe), sqlite(db), docker(dev setup), nx(monorepo)
+
+### Design Decision
+I chose nodejs with express for backend based on the guidelines and I find it would be consistent to have it all typescript as the language in both backend and frontend. I use the nx monorepo in synergy with docker to run automated tasks like migration, seeder, lint. In my development as well to generate the components, linting and to have a shared node module packages. I decided to use SQLite because it would be easier for me to start making the app because of less configuration, DB relational showcase, demo purposes and it also work well with PRISMA ORM. I also needed to make sure I have docker setup because I was switching from my mac mini and laptop to ensure consistent development setup. I have to make sure that this can be run easily and conveniently and later it can be easily extended for multi stage environment such as staging and production.  
+
+For frontend development decision, I have decided to just implement the client facing app such as login, register, book browse, search and view details.
+
+For backend development, I have created CRUD operations using API only and added a seeder to pregenerate sample books. I am thinking that the CRUD operation for managing the books can have a separate ADMIN UI page/separate app to manage the records(which can be done later).
+
+### Related files
+In this repository all the related files while I was building this app can be seen in PLAN, REFERENCES, DOCUMENTATION and README.md.
+
+### DB Schema
+This DB schema can found under apps/bookstore-api/prisma/schema.prisma
