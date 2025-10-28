@@ -8,30 +8,47 @@ type BookCardProps = {
 
 const BookCard: React.FC<BookCardProps> = ({ book, onFavorite }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200 max-h-80 flex flex-col">
+      {/* Image */}
       {book.imageUrl ? (
         <img
           src={book.imageUrl}
           alt={book.title}
-          className="w-full h-56 object-cover"
+          className="w-full h-48 object-cover flex-shrink-0"
         />
       ) : (
-        <div className="w-full h-56 bg-gray-200 flex items-center justify-center text-gray-500">
+        <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500 flex-shrink-0">
           No Image
         </div>
       )}
 
-      <div className="p-4 flex flex-col justify-between h-[150px]">
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 truncate">
+      {/* Content */}
+      <div className="p-4 flex flex-col justify-between flex-1 overflow-hidden">
+        <div className="mb-2">
+          <h3
+            className="text-lg font-semibold text-gray-800 truncate"
+            title={book.title} // show full title on hover
+          >
             {book.title}
           </h3>
-          <p className="text-sm text-gray-500">{book.author}</p>
+          <p
+            className="text-sm text-gray-500 truncate"
+            title={book.author} // show full author on hover
+          >
+            {book.author}
+          </p>
+          {book.content && (
+            <p
+              className="text-sm text-gray-700 mt-1 line-clamp-3"
+              title={book.content}
+            >
+              {book.content}
+            </p>
+          )}
         </div>
 
-        <div className="flex items-center justify-between mt-3">
+        <div className="flex items-center justify-between mt-auto">
           <span className="text-indigo-600 font-bold">${book.price.toFixed(2)}</span>
-
           <button
             onClick={() => onFavorite?.(book.id)}
             className="text-gray-400 hover:text-red-500 transition-colors"

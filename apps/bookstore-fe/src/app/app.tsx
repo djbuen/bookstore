@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
-import { BookGrid } from "@bookstore/ui-shared";
+import { Header, BookGrid } from "@bookstore/ui-shared";
 import { Book } from "@bookstore/types";
 
 const mockBooks: Book[] = [
@@ -10,7 +10,7 @@ const mockBooks: Book[] = [
     author: "Author 1",
     price: 19.99,
     imageUrl: "https://",
-    content: null,
+    content: "This is a test book.",
     date_published: new Date(),
     favorites: [],
   },
@@ -20,7 +20,7 @@ const mockBooks: Book[] = [
     author: "Author 2",
     price: 15.49,
     imageUrl: "https://",
-    content: null,
+    content: "This is a test book.",
     date_published: new Date(),
     favorites: [],
   },
@@ -37,26 +37,11 @@ function App() {
 
   return (
     <>
-      {/* Header */}
-      <header className="bg-gray-800 text-white py-4 shadow">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
-          <h1 className="text-xl font-semibold">
-            <Link to="/">Bookstore</Link>
-          </h1>
-          <nav className="space-x-6">
-            <Link to="/" className="hover:text-gray-300">Home</Link>
-            <Link to="/books" className="hover:text-gray-300">Books</Link>
-            <Link to="/login" className="hover:text-gray-300">Login</Link>
-            <Link to="/register" className="hover:text-gray-300">Register</Link>
-          </nav>
-        </div>
-      </header>
-
-      {/* Page routes */}
+      <Header /> 
       <main className="max-w-7xl mx-auto p-6">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/books" element={<BookGrid title="Best Sellers" books={mockBooks} onFavorite={handleFavorite} />} />
+          <Route path="/books" element={<BookGrid title="All" books={mockBooks} onFavorite={handleFavorite} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<Navigate to="/" replace />} />
