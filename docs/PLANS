@@ -19,7 +19,7 @@
   * Make a draft of the UI, layout - done
   * Break down components - header, booklist, bookcard, book item, bookmodal, login form, registration form, filters, search field
   * Create a folder structure (done)
-  * Create reusable components
+  * Create reusable components(done)
   * Make test
   * Integrate FE and API
   * Features
