@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import * as BookService from '../services/book.service';
+import { createBookSchema, updateBookSchema } from "../validations/book.validation";
 
 // Get all books
 const getAllBooks = async (req: Request, res: Response) => {
@@ -53,7 +54,8 @@ const getBookById = async (req: Request, res: Response): Promise<Response | unde
 // Create a new book
 const createBook = async (req: Request, res: Response) => {
   try {
-    const bookData = req.body;
+    const bookData = createBookSchema.parse(req.body);
+
     console.log("Received book data:", bookData);
     const newBook = await BookService.createBook(bookData);
     res.status(201).send({
@@ -72,7 +74,8 @@ const createBook = async (req: Request, res: Response) => {
 const updateBook = async (req: Request, res: Response) => {
   try {
     const bookID = parseInt(req.params.bookID);
-    const bookData = req.body;
+    const bookData = updateBookSchema.parse(req.body);
+
     const updatedBook = await BookService.updateBook(bookID, bookData); 
     if (updatedBook) {
       res.status(200).send({
