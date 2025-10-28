@@ -1,5 +1,5 @@
 import React from "react";
-import { Book } from "../types/book.type";
+import { Book } from "@bookstore/types";
 import { BookCard } from '@bookstore/ui-shared';
 
 type BookGridProps = {

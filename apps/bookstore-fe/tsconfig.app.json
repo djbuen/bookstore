@@ -32,9 +32,6 @@
     "vitest.config.mts"
   ],
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
-  "paths": {
-    "@bookstore/ui-shared": ["../../libs/ui-shared/src/index.ts"]
-  },
   "references": [
     {
       "path": "../../libs/types/tsconfig.lib.json"
