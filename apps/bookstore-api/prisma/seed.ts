@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { books } from './books';
+import { hash, compare } from 'bcrypt';
 
 const prisma = new PrismaClient();
 const imageUrl =
@@ -10,20 +11,22 @@ async function main() {
   await prisma.user.deleteMany({});
   console.log('Seeding database...');
 
+  let hashedPassword = await hash('rN5G3ZzaNyqi', 10);
   // Create users
   const user1 = await prisma.user.create({
     data: {
       username: 'svorontsov',
       name: 'Sergie',
-      password: 'rN5G3ZzaNyqi',
+      password: hashedPassword,
     },
   });
 
+  hashedPassword = await hash('DCytjWLjUYHY', 10);
   const user2 = await prisma.user.create({
     data: {
       username: 'dbuenconsejo',
       name: 'Dave',
-      password: 'DCytjWLjUYHY',
+      password: hashedPassword,
     },
   });
 

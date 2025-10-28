@@ -6,19 +6,7 @@ import * as FavoriteController from '../controllers/favorite.controller';
 const app: Application = express();
 
 app.get("/", FavoriteController.getAllFavorites);
-
-// app.get("/:favoriteID", FavoriteController.getBook);
-
-app.post("/", (req, res) => {
-  res.send("Create a new favorite");
-});
-
-app.patch("/:favoriteID", (req, res) => {
-  res.send("Update an existing favorite");
-});
-
-app.delete("/:favoriteID", (req, res) => {
-  res.send("Delete an existing favorite");
-});
+app.post("/", FavoriteController.addFavorite);
+app.delete("/:favoriteID", FavoriteController.removeFavorite);
 
 export default app;
