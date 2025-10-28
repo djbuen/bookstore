@@ -30,12 +30,12 @@
 Checklist
 1. Responsive UI
 2. Book CRUD(API only), 
-   User can browser books
+   User can browser books,
    search by title and author,
    book details
-3. DB Schema
+3. DB Schema(done)
 4. Error Handling in FE and API
-5. Documentation
+5. Documentation(WIP)
 
 Bonus
 * User login
