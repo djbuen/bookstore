@@ -19,6 +19,7 @@ Dockerfile generation references
 https://medium.com/@ronderksen/using-docker-compose-to-run-your-nx-apps-together-2fcce26df436
 https://javascript.plainenglish.io/dockerizing-your-nx-monorepo-seamless-deployment-for-react-and-nestjs-apps-cb5b53e29fe7?gi=b6a6fbe4b816
 https://www.reddit.com/r/node/comments/16gx2ue/dockerize_nx_monorepo_app/
+https://github.com/djbuen/development-starter-kit - my personal starter kit
 
 NodeJS Express and route mapping
 https://expressjs.com/en/starter/examples.html
@@ -51,3 +52,17 @@ https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/relation-mode
 
 PRISMA MIGRATION
 https://www.prisma.io/docs/guides/data-migration
+
+DB SEED REFERENCE
+https://leaderandlearner.substack.com/p/the-30-best-nonfiction-books-ive
+
+CORS SETUP
+https://expressjs.com/en/resources/middleware/cors.html
+
+Validators
+https://zod.dev/basics
+https://dev.to/arafat4693/learn-zod-in-5-minutes-17pn
+https://plainenglish.io/tldr/zod-cheatsheet
+
+Testing library
+https://testing-library.com/docs/react-testing-library/api

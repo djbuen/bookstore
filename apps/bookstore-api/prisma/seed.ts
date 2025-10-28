@@ -1,29 +1,37 @@
 import { PrismaClient } from '@prisma/client';
+import { books } from './books';
+import { hash, compare } from 'bcrypt';
 
 const prisma = new PrismaClient();
+const imageUrl =
+  'https://placehold.co/600x800/png?text=Book+Cover';
 
 async function main() {
   console.log('Truncating users table...');
   await prisma.user.deleteMany({});
   console.log('Seeding database...');
 
+  let hashedPassword = await hash('rN5G3ZzaNyqi', 10);
   // Create users
   const user1 = await prisma.user.create({
     data: {
       username: 'svorontsov',
       name: 'Sergie',
-      password: 'rN5G3ZzaNyqi',
+      password: hashedPassword,
     },
   });
 
+  hashedPassword = await hash('DCytjWLjUYHY', 10);
   const user2 = await prisma.user.create({
     data: {
       username: 'dbuenconsejo',
       name: 'Dave',
-      password: 'DCytjWLjUYHY',
+      password: hashedPassword,
     },
   });
 
+  console.log('Truncating books table...');
+  await prisma.book.deleteMany({});
   // Create books
   const book1 = await prisma.book.create({
     data: {
@@ -46,6 +54,28 @@ async function main() {
       imageUrl: 'https://example.com/image2.jpg',
     },
   });
+
+  for (const book of books) {
+    await prisma.book.upsert({
+      where: { id: book.id },
+      update: {},
+      create: {
+        id: book.id,
+        title: book.title,
+        author: book.author,
+        content: book.content,
+        date_published: new Date(
+          2010 + Math.floor(Math.random() * 15), //year
+          Math.floor(Math.random() * 12), //month
+          Math.floor(Math.random() * 28) + 1 //day
+        ),
+        price: Number((Math.random() * 30 + 10).toFixed(2)),
+        imageUrl: imageUrl,
+        favorites: { create: [] },
+      },
+    });
+  }
+  console.log('Done Truncating books table...');
 
   // Create favorite relationships between users and books
   await prisma.favorite.create({

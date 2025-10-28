@@ -1,13 +1,13 @@
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
+import { User } from "src/types/user.type";
+import { getPrisma } from "../utils/prisma.util";
 
 export class UserModel {
-  static async getAll(): Promise<any[]> {
-    try {
-      return await prisma.user.findMany();
-    } catch (error) {
-      console.error('Error fetching all users:', error);
-      throw new Error('Failed to fetch users');
-    }
+  static async getAll(): Promise<User[]> {
+    return await getPrisma().user.findMany();
+  }
+  static async findByID(userID: number): Promise<User | null> {
+    return await getPrisma().user.findUnique({
+      where: { id: userID },
+    });
   }
 }

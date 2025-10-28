@@ -1,0 +1,43 @@
+1. Read requirements - done
+2. Choose tech stack(node,react,sqlite,docker,nx) - done
+3. Env setup
+  * setup monorepo - done
+  * setup docker - done
+  * api file structure - done
+  * add db service(sqlite) - done
+  * created DB schema - done
+4. Backend development
+  * gather books data(done)
+  * create migration task to populate book data (done)
+  * Make API Operations
+    * users(authentication) - login, register(done)
+    * books - list(done), CRUD(done)
+    * favorites - add, remove, list(done)
+  * Add ORM in API - done
+  * API testing - done
+5. Frontend development
+  * Make a draft of the UI, layout - done
+  * Break down components - header, booklist, bookcard, book item, bookmodal, login form, registration form, filters, search field
+  * Create a folder structure (done)
+  * Create reusable components
+  * Make test
+  * Integrate FE and API
+  * Features
+    * books 
+      - view book details
+      - search by books by title and author,
+
+Checklist
+1. Responsive UI
+2. Book CRUD(API only), 
+   User can browser books(FE),
+   search by title and author(FE),
+   book details(FE)
+3. DB Schema(done)
+4. Error Handling in FE and API(done)
+5. Documentation(WIP)
+
+Bonus
+* User login
+* Favorites
+* Tests

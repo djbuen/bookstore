@@ -1,37 +1,26 @@
-// import { PrismaClient } from '@prisma/client';
-let prisma: any;
+import { UserModel } from "../models/user.model";
+import { getPrisma } from "../utils/prisma.util";
+import { User } from "src/types/user.type";
 
-export const getPrisma = () => {
-  if (!prisma) {
-    const { PrismaClient } = require('@prisma/client');
-    prisma = new PrismaClient();
-  }
-  return prisma;
-};
 const getAllUsers = async () => {
-    return await getPrisma().user.findMany();
+  return UserModel.getAll();
 }
 
-const getOneUser = (userID: string) => {
-    return;
+const findUser = async (userID: number) => {
+    return UserModel.findByID(userID);
 }
 
-const createNewUser = (userData: any) => {
-    return userData;
-}
+const findUserByUsername = async (username: string): Promise<User | null> => {
+  return await getPrisma().user.findUnique({ where: { username } });
+};
 
-const updateOneUser = (userID: string, userData: any) => {
-    return;
-}
-
-const deleteOneUser = (userID: string) => {
-    return;
-}
+const createUser = async (userData: Partial<User>): Promise<User> => {
+  return await getPrisma().user.create({ data: userData });
+};
 
 export {
   getAllUsers,
-  getOneUser,
-  createNewUser,
-  updateOneUser,
-  deleteOneUser,
+  findUser,
+  findUserByUsername,
+  createUser
 }
