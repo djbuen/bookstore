@@ -46,7 +46,8 @@ docker compose up
 ```
 
 ## API Testing
-The postman exported collections is found under docs/postman exported collections/Bookstore Rest API Template.postman_collection.json
+The postman exported collections is found under docs/postman exported collections/Bookstore Rest API Template.postman_collection.json.
+If you have a desktop postman client you can import this file and use the api request template to test the api.
 
 ## Useful links
 
