@@ -45,6 +45,9 @@ Step 3: Restart
 docker compose up
 ```
 
+## API Testing
+The postman exported collections is found under docs/postman exported collections/Bookstore Rest API Template.postman_collection.json
+
 ## Useful links
 
 Learn more:
