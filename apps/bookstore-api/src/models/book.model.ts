@@ -31,4 +31,16 @@ export class BookModel {
     });
     return deletedBook ? true : false;
   }
+
+  static async search(query: string): Promise<Book[]> {
+    const prisma = getPrisma();
+    return prisma.book.findMany({
+      where: {
+        OR: [
+          { title: { contains: query } },
+          { author: { contains: query } },
+        ],
+      },
+    });
+  }
 }

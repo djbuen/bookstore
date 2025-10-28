@@ -10,11 +10,11 @@
   * gather books data(done)
   * create migration task to populate book data (done)
   * Make API Operations
-    * users(authentication) - login, register
-    * books - list(done), CRUD
-    * favorites - add, remove, list
+    * users(authentication) - login, register(done)
+    * books - list(done), CRUD(done)
+    * favorites - add, remove, list(done)
   * Add ORM in API - done
-  * API testing
+  * API testing - done
 5. Frontend development
   * Make a draft of the UI, layout
   * Break down components
@@ -30,11 +30,11 @@
 Checklist
 1. Responsive UI
 2. Book CRUD(API only), 
-   User can browser books,
-   search by title and author,
-   book details
+   User can browser books(FE),
+   search by title and author(FE),
+   book details(FE)
 3. DB Schema(done)
-4. Error Handling in FE and API
+4. Error Handling in FE and API(done)
 5. Documentation(WIP)
 
 Bonus

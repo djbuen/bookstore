@@ -117,10 +117,37 @@ const deleteBook = async (req: Request, res: Response) => {
   }
 };
 
+const searchBooks = async (req: Request, res: Response) => {
+  try {
+    const { q } = req.query;
+
+    if (!q || typeof q !== "string") {
+      return res.status(400).send({
+        message: "Query parameter 'q' is required and must be a string",
+      });
+    }
+
+    const books = await BookService.searchBooks(q);
+
+    res.status(200).send({
+      message: `Search results for "${q}"`,
+      count: books.length,
+      books,
+    });
+  } catch (error: any) {
+    res.status(500).send({
+      message: "Failed to search books",
+      error: error.message,
+    });
+  }
+};
+
+
 export { 
   getAllBooks,
   getBookById,
   createBook,
   updateBook,
-  deleteBook
+  deleteBook,
+  searchBooks,
 }
