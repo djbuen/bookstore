@@ -16,9 +16,9 @@
   * Add ORM in API - done
   * API testing - done
 5. Frontend development
-  * Make a draft of the UI, layout
-  * Break down components
-  * Create a folder structure
+  * Make a draft of the UI, layout - done
+  * Break down components - header, booklist, bookcard, book item, bookmodal, login form, registration form, filters, search field
+  * Create a folder structure (done)
   * Create reusable components
   * Make test
   * Integrate FE and API
