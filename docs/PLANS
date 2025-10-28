@@ -26,6 +26,8 @@
     * books 
       - view book details
       - search by books by title and author,
+    * login/register
+    * favorites
 
 Checklist
 1. Responsive UI

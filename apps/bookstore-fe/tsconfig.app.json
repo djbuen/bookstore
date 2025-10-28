@@ -11,6 +11,9 @@
       "@nx/react/typings/image.d.ts",
       "vite/client"
     ],
+    "paths": {
+      "@bookstore/ui-shared": ["../../libs/ui-shared/src/index.ts"]
+    },
     "rootDir": "src",
     "module": "esnext",
     "moduleResolution": "bundler"
@@ -31,5 +34,13 @@
     "vitest.config.ts",
     "vitest.config.mts"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
+  "references": [
+    {
+      "path": "../../libs/types"
+    },
+    {
+      "path": "../../libs/ui-shared/tsconfig.lib.json"
+    }
+  ]
 }
