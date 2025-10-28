@@ -27,13 +27,13 @@ const BookCard: React.FC<BookCardProps> = ({ book, onFavorite }) => {
         <div className="mb-2">
           <h3
             className="text-lg font-semibold text-gray-800 truncate"
-            title={book.title} // show full title on hover
+            title={book.title}
           >
             {book.title}
           </h3>
           <p
             className="text-sm text-gray-500 truncate"
-            title={book.author} // show full author on hover
+            title={book.author}
           >
             {book.author}
           </p>
