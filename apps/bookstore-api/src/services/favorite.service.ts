@@ -1,8 +1,8 @@
 import { FavoriteModel } from "../models/favorite.model";
 import { Favorite } from "src/types/favorite.type";
 
-const getAllFavorites = async () => {
-  return FavoriteModel.getAll();
+const getAllFavorites = async (userId: number) => {
+  return FavoriteModel.getAll(userId);
 }
 
 const addFavorite = async (data: { userId: number; bookId: number }): Promise<Favorite> => {

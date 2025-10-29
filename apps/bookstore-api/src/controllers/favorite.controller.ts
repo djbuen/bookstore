@@ -3,7 +3,8 @@ import * as favoriteService from '../services/favorite.service';
 
 const getAllFavorites = async (req: Request, res: Response) => {
   try {
-    const favorites = await favoriteService.getAllFavorites();
+    const { userId } = res.locals.user;
+    const favorites = await favoriteService.getAllFavorites(userId);
     res.send({
       message: "Get all favorites",
       payload: req.params,
@@ -18,10 +19,11 @@ const getAllFavorites = async (req: Request, res: Response) => {
 };
 
 const addFavorite = async (req: Request, res: Response) => {
-  const { userId, bookId } = req.body;
+  const { bookId } = req.body;
+  const { userId } = res.locals.user;
 
   try {
-    const favorite = await favoriteService.addFavorite({ userId, bookId });
+    const favorite = await favoriteService.addFavorite({ userId, bookId: parseInt(bookId) });
     res.status(201).send({
       message: "Favorite added successfully",
       favorite,
@@ -35,7 +37,7 @@ const addFavorite = async (req: Request, res: Response) => {
 };
 
 const removeFavorite = async (req: Request, res: Response) => {
-  const favoriteId = parseInt(req.params.favoriteId);
+  const favoriteId = parseInt(req.params.favoriteID);
 
   try {
     await favoriteService.removeFavorite(favoriteId);

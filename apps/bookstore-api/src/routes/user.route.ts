@@ -1,8 +1,5 @@
 import express, { Application } from 'express';
 import * as UserController from '../controllers/user.controller';
-// =============================
-// Express App Setup
-// =============================
 const app: Application = express();
 
 app.get("/", UserController.getAllUsers);

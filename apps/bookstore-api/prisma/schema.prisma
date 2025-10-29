@@ -43,3 +43,4 @@ model Favorite {
   deletedAt  DateTime?
   @@unique([userId, bookId])
 }
+// I was planning to do a soft delete for favorites record

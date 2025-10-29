@@ -7,3 +7,5 @@ export { default as LoginForm } from './components/login-form';
 export { default as RegistrationForm } from './components/registration-form';
 export { default as Filters } from './components/filters';
 export { default as SearchField } from './components/search-field';
+export { default as Toast } from './components/toast';
+export { default as FavoriteButton } from './components/favorite-button';

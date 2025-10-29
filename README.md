@@ -23,6 +23,17 @@ then
 docker compose build --no-cache && docker compose up
 ```
 
+Navigate to http://localhost:4200/
+
+## Run the app(FALLBACK OPTION)
+1. use node v24.10.0
+2. rm package-lock.json
+3. npm install
+4. run `npx prisma generate --schema=apps/bookstore-api/prisma/schema.prisma`
+4. run `npx nx serve bookstore-api`
+5. in other terminal run `npx nx serve bookstore-fe`
+6. Navigate to http://localhost:4200/
+
 ### Mac Docker Compose v2 client
 ```sh
 docker compose build --no-cache && docker compose up
