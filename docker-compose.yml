@@ -13,7 +13,7 @@ services:
       - PORT=3000 #expose port 3000
       - HOST=0.0.0.0 #bind to all interface so it would be accessible from outside the container
     working_dir: /usr/src/app
-    command: sh -c "npx nx run @bookstore/bookstore-api:migrate && npx nx run @bookstore/bookstore-api:seed && nx serve bookstore-api"
+    command: sh -c "nx reset && npx nx run @bookstore/bookstore-api:migrate && npx nx run @bookstore/bookstore-api:seed && nx serve bookstore-api"
     # command: nx serve bookstore-api
     # command: node apps/bookstore-api/dist/main.js
   bookstore-fe:
@@ -29,7 +29,7 @@ services:
       - PORT=4200 #expose port 3000
       - HOST=0.0.0.0 #bind to all interface so it would be accessible from outside the container
     working_dir: /usr/src/app
-    command: sh -c "nx sync && nx serve bookstore-fe"
+    command: sh -c "nx reset && nx sync && nx serve bookstore-fe"
 # networks:
 #   app-network:
 #     driver: bridge
