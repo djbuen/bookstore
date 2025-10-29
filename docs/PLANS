@@ -19,25 +19,28 @@
   * Make a draft of the UI, layout - done
   * Break down components - header, booklist, bookcard, book item, bookmodal, login form, registration form, filters, search field
   * Create a folder structure (done)
-  * Create reusable components
-  * Make test
-  * Integrate FE and API
+  * Create reusable components(done)
+  * Make test(done)
+  * Integrate FE and API(done)
   * Features
-    * books 
-      - view book details
-      - search by books by title and author,
+    * books (done)
+      - view book details(done)
+      - search by books by title and author,(done)
+    * login/register
+    * favorites
 
 Checklist
-1. Responsive UI
-2. Book CRUD(API only), 
-   User can browser books(FE),
-   search by title and author(FE),
-   book details(FE)
+1. Responsive UI(done)
+2. Book CRUD(API only), (done)
+   User can browser books(FE),(done)
+   search by title and author(FE),(done)
+   book details(FE)(done)
 3. DB Schema(done)
 4. Error Handling in FE and API(done)
 5. Documentation(WIP)
 
 Bonus
-* User login
+* User login(done)
+  * Update header(done)
 * Favorites
 * Tests

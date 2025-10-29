@@ -16,6 +16,13 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@bookstore/source"]
+    "customConditions": ["@bookstore/source"], 
+    "baseUrl": ".",
+    "paths": {
+      "@bookstore/ui-shared": ["libs/ui-shared/src/index.ts"],
+      "@bookstore/ui-shared/*": ["libs/ui-shared/src/*"],
+      "@bookstore/types": ["libs/types/src/index.ts"],
+      "@bookstore/types/*": ["libs/types/src/*"]
+    }
   }
 }

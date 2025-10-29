@@ -13,3 +13,17 @@ In this repository all the related files while I was building this app can be se
 
 ### DB Schema
 This DB schema can found under apps/bookstore-api/prisma/schema.prisma
+
+### Challenges that I have overcome
+1. Docker compose, nx setup
+2. type issues with nodejs for packages such as bcrypt, jsonwebtokens an open issue in Github
+3. docker, nx shared library relative import
+4. cross origin resource fe and api integration(common)
+5. prisma client, nx issue(configuration necessary)
+6. nx daemon process become zombie during development when not gracefully `docker compose down`
+
+### Enhancement that be can done in the next phase
+1. nodejs api file structure - services, api, models, routes, controllers can be group per resource in a single folder
+2. UI menu items restructure
+3. books data can be saved in memory db for fast response like(redis, mongodb)
+4. test coverage 100%

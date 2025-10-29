@@ -1,4 +1,4 @@
-version: '3.9'
+# version: '3.9'
 services:
   bookstore-api:
     build:
@@ -29,7 +29,7 @@ services:
       - PORT=4200 #expose port 3000
       - HOST=0.0.0.0 #bind to all interface so it would be accessible from outside the container
     working_dir: /usr/src/app
-    command: nx serve bookstore-fe
+    command: sh -c "nx sync && nx serve bookstore-fe"
 # networks:
 #   app-network:
 #     driver: bridge

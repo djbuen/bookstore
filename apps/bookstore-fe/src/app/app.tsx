@@ -1,49 +1,35 @@
-import NxWelcome from './nx-welcome';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { Header } from "@bookstore/ui-shared";
+import { LoginPage } from "./pages/login";
+import { RegistrationPage } from "./pages/registration";
+import { BooksPage } from "./pages/books";
+import { ProtectedRoute } from "./components/protected-routes";
 
-import { Route, Routes, Link } from 'react-router-dom';
+const Home = () => <h1 className="text-2xl font-bold p-6">Welcome to the Bookstore</h1>;
 
-export function App() {
+function App() {
+
   return (
-    <div>
-      {/* <NxWelcome title="@bookstore/bookstore-fe" /> */}
-
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      <br />
-      <hr />
-      <br />
-      <div role="navigation">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page-2">Page 2</Link>
-          </li>
-        </ul>
-      </div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              This is the generated root route.{' '}
-              <Link to="/page-2">Click here for page 2.</Link>
-            </div>
-          }
-        />
-        <Route
-          path="/page-2"
-          element={
-            <div>
-              <Link to="/">Click here to go back to root page.</Link>
-            </div>
-          }
-        />
-      </Routes>
-      {/* END: routes */}
-    </div>
+    <>
+      <Header /> 
+      <main className="max-w-7xl mx-auto p-6">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/books"
+            element={
+              <ProtectedRoute>
+                <BooksPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
+    </>
   );
 }
 

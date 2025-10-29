@@ -8,6 +8,12 @@
     },
     {
       "path": "./apps/bookstore-fe"
+    },
+    {
+      "path": "./libs/types"
+    },
+    {
+      "path": "./libs/ui-shared"
     }
   ]
 }
