@@ -34,3 +34,5 @@ This DB schema can found under apps/bookstore-api/prisma/schema.prisma
 5. test coverage 100%
 6. DB persistence on for production environment or should be a separate service
 7. Docker multi environment setup
+8. Pagination on scroll and lazy loading
+9 UI enhancements
