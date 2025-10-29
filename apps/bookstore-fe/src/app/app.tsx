@@ -1,13 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Header } from "@bookstore/ui-shared";
-import { Book } from "@bookstore/types";
 import { LoginPage } from "./pages/login";
 import { RegistrationPage } from "./pages/registration";
 import { BooksPage } from "./pages/books";
 
 const Home = () => <h1 className="text-2xl font-bold p-6">Welcome to the Bookstore</h1>;
-const Register = () => <h1 className="text-2xl font-bold p-6">Register Page</h1>;
 
 function App() {
 

@@ -6,8 +6,8 @@ const Header: React.FC = () => {
 
   return (
     <header className="bg-white shadow-md p-4 flex justify-between items-center relative z-20">
-      <Link to="/" className="text-xl font-bold text-gray-800">
-        BookStore
+      <Link to="/" className="text-xl font-bold text-gray-800 whitespace-nowrap">
+        Dave's BookStore
       </Link>
 
       {/* Hamburger Button */}
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
       <nav
         className={`${
             isOpen ? "block" : "hidden"
-        } absolute top-full right-0 w-full bg-white shadow-md md:shadow-none md:static md:flex md:space-x-4 z-10 justify-end`}
+        } absolute top-full right-0 bg-white shadow-md md:shadow-none md:static md:flex md:space-x-4 z-10 justify-end`}
         >
       
         <Link
