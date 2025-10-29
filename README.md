@@ -3,6 +3,25 @@
 All the related documentation can be found under ./docs folder.
 
 ## Run the app
+```sh
+docker compose up
+```
+
+Incase the docker compose up fails for the first time, don't end the docker process yet and try running these commands
+```sh
+docker compose exec bookstore-api npx nx sync
+docker compose exec bookstore-api npx nx reset
+```
+or
+```sh
+docker compose exec bookstore-fe npx nx sync
+docker compose exec bookstore-fe npx nx reset
+```
+
+then
+```sh
+docker compose build --no-cache && docker compose up
+```
 
 ### Mac Docker Compose v2 client
 ```sh
