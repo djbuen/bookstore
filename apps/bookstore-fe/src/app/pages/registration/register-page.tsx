@@ -8,6 +8,7 @@ const LoginPage: React.FC = () => {
         <h1 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
           Register to BookStore
         </h1>
+        <p className="text-red-500">I haven't implemented this part, you can create an account via api or postman collection</p>
         <RegistrationForm/>
       </div>
     </div>

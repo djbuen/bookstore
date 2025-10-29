@@ -25,9 +25,12 @@ This DB schema can found under apps/bookstore-api/prisma/schema.prisma
 8. limited time due to personal circumstances
 
 ### Enhancement that be can done in the next phase
-1. nodejs api file structure - services, api, models, routes, controllers can be group per resource in a single folder
-2. UI menu items restructure
-3. books data can be saved in memory db for fast response like(redis, mongodb)
-4. test coverage 100%
-5. DB persistence on for production environment or should be a separate service
-6. Docker multi environment setup
+1. convert global state such as books and favorites into RTK toolkit/zustand/redux-saga
+    for optimized react tree component renders, it will also avoid books page code bloat
+    NOTE: I use hooks for now to make it simple with prop drillings like books page into book grid
+2. nodejs api file structure - services, api, models, routes, controllers can be group per resource in a single folder
+3. UI menu items restructure
+4. books data can be saved in memory db for fast response like(redis, mongodb)
+5. test coverage 100%
+6. DB persistence on for production environment or should be a separate service
+7. Docker multi environment setup

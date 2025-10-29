@@ -1,14 +1,13 @@
-import react, { useTransition, useRef } from "react";
+import react, { useTransition, useRef, useEffect } from "react";
 import { BookGrid, BookModal } from "@bookstore/ui-shared";
 import { useBooks } from "apps/bookstore-fe/src/shared/hooks/useBooks";
+import { useFavorites } from "apps/bookstore-fe/src/shared/hooks/userFavorites";
 
 const BooksPage: React.FC = () => {
     const { books, loading, error, searchBook} = useBooks();
     const [selectedBook, setSelectedBook] = react.useState(null);
     const [isPending, startTransition] = useTransition();
-    const handleFavorite = (id: number) => {
-        console.log(`Book ${id} favorited!`);
-    };
+    const { favorites, getAllFavorites, addToFavorites, removeFromFavorites } = useFavorites();
     const onClickBook = (book) => {
         setSelectedBook(book);
     };
@@ -28,13 +27,36 @@ const BooksPage: React.FC = () => {
         }, 400); // debounce delay
     };
 
+    //load favorites on mount
+    useEffect(() => {
+        getAllFavorites();
+    }, []);
+
+    const handleFavoriteToggle = (bookId: number) => {
+        const isFav = favorites.some((fav) => fav.bookId === bookId);
+        if (isFav) {
+            const fav = favorites.find((f) => f.bookId === bookId);
+            if (fav) removeFromFavorites(fav.id.toString());
+        } else {
+            addToFavorites(bookId.toString());
+        }
+    };
+
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error loading books.</div>;
 
     return (
         <div>
-            <BookGrid title="Best Sellers" books={books} onFavorite={handleFavorite} onClick={onClickBook} onSearch={onSearch}/>
-            <BookModal book={selectedBook} onClose={() => setSelectedBook(null)} />
+            <BookGrid
+                title="Best Sellers"
+                books={books}
+                favorites={favorites}
+                onFavorite={handleFavoriteToggle}
+                onClick={onClickBook}
+                onSearch={onSearch}/>
+            <BookModal
+                book={selectedBook}
+                onClose={() => setSelectedBook(null)} />
         </div>
     );
 }
