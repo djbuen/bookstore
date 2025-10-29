@@ -8,7 +8,7 @@ type BookCardProps = {
 
 const BookCard: React.FC<BookCardProps> = ({ book, onFavorite }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200 max-h-80 flex flex-col">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200 max-h-100 flex flex-col">
       {/* Image */}
       {book.imageUrl ? (
         <img
@@ -39,7 +39,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, onFavorite }) => {
           </p>
           {book.content && (
             <p
-              className="text-sm text-gray-700 mt-1 line-clamp-3"
+              className="text-sm text-gray-700 mt-1 line-clamp-1"
               title={book.content}
             >
               {book.content}
