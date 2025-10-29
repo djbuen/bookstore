@@ -6,9 +6,10 @@ type BookGridProps = {
   title?: string;
   books: Book[];
   onFavorite?: (bookId: number) => void;
+  onClick?: (book: Book) => void;
 };
 
-const BookGrid: React.FC<BookGridProps> = ({ title, books, onFavorite }) => {
+const BookGrid: React.FC<BookGridProps> = ({ title, books, onFavorite, onClick }) => {
   return (
     <section className="my-8">
       {title && (
@@ -16,7 +17,7 @@ const BookGrid: React.FC<BookGridProps> = ({ title, books, onFavorite }) => {
       )}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {books.map((book) => (
-          <BookCard key={book.id} book={book} onFavorite={onFavorite} />
+          <BookCard key={book.id} book={book} onFavorite={onFavorite} onClick={onClick}/>
         ))}
       </div>
     </section>

@@ -1,6 +1,6 @@
 export { default as BookGrid } from './components/book-grid';
 export { default as BookCard } from './components/book-card';
-export { default as BookModal } from './components/book-card';
+export { default as BookModal } from './components/book-modal';
 export { default as Header } from './components/header';
 export { default as BookItem } from './components/book-item';
 export { default as LoginForm } from './components/login-form';

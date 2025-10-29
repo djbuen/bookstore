@@ -4,17 +4,20 @@ import { Book } from "@bookstore/types";
 type BookCardProps = {
   book: Book;
   onFavorite?: (bookId: number) => void;
+  onClick?: (book: Book) => void;
 };
 
-const BookCard: React.FC<BookCardProps> = ({ book, onFavorite }) => {
+const BookCard: React.FC<BookCardProps> = ({ book, onFavorite, onClick }) => {
   return (
     <div className="
     bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200 max-h-100 flex flex-col
     hover:shadow-xl hover:scale-[1.03] transition-transform duration-300 ease-in-out
     cursor-pointer group
-    ">
+    "
+    onClick={() => onClick?.(book)}
+    >
       {/* Image */}
-      {book.imageUrl ? (
+      {book?.imageUrl ? (
         <img
           src={book.imageUrl}
           alt={book.title}
