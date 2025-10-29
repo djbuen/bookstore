@@ -19,15 +19,17 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// axiosInstance.interceptors.response.use(
-//   (response) => response,
-//   (error) => {
-//     // Handle global errors, e.g., redirect to login on 401
-//     if (error.response && error.response.status === 401) {
-//       console.error('Unauthorized request.');
-//     }
-//     return Promise.reject(error);
-//   }
-// );
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    // Handle global errors, e.g., redirect to login on 401
+    if (error.response && error.response.status === 401) {
+      console.error('Unauthorized request.');
+      sessionStorage.removeItem('auth-token');
+      window.location.href = '/login';
+    }
+    return Promise.reject(error);
+  }
+);
 
 export default axiosInstance;

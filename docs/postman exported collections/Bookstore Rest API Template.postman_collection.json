@@ -124,7 +124,8 @@
 									"});",
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -133,7 +134,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Molly’s Game(Updated Edition v1)\",\n    \"content\": \"Molly Bloom’s story of running high-stakes poker games for Hollywood elites and her battle with the mob and the FBI.\",\n    \"date_published\": \"2024-11-17T00:00:00.000Z\",\n    \"author\": \"Molly Bloom\",\n    \"price\": 10.24,\n    \"imageUrl\": \"https://placehold.co/600x800/png?text=Book+Cover\"\n}",
+							"raw": "{\n    \"title\": \"Molly’s Game(Updated Edition v1)\",\n    \"content\": \"Molly Bloom’s story of running high-stakes poker games for Hollywood elites and her battle with the mob and the FBI.\",\n    \"date_published\": \"2024-11-17T00:00:00.000Z\",\n    \"author\": \"Molly Bloom\",\n    \"price\": 23,\n    \"imageUrl\": \"https://placehold.co/600x800/png?text=Book+Cover\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -363,7 +364,7 @@
 			"name": "favorites",
 			"item": [
 				{
-					"name": "get all",
+					"name": "get all - requires auth token from login",
 					"event": [
 						{
 							"listen": "test",
@@ -373,11 +374,22 @@
 									"    pm.response.to.have.status(200);",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2MSwidXNlcm5hbWUiOiJkYnVlbmNvbnNlam8iLCJpYXQiOjE3NjE3NzE1NjAsImV4cCI6MTc2MTc3NTE2MH0.NY5MoixHD3MNsD-nlfkT_fhRZOHHzeZRHoOiPxP82zs",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -394,7 +406,7 @@
 					"response": []
 				},
 				{
-					"name": "add favorites",
+					"name": "add favorites- requires auth token from login",
 					"event": [
 						{
 							"listen": "test",
@@ -405,16 +417,27 @@
 									"});",
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2MSwidXNlcm5hbWUiOiJkYnVlbmNvbnNlam8iLCJpYXQiOjE3NjE3NzE1NjAsImV4cCI6MTc2MTc3NTE2MH0.NY5MoixHD3MNsD-nlfkT_fhRZOHHzeZRHoOiPxP82zs",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"userId\": 86,\n    \"bookId\": 2\n}",
+							"raw": "{\n    \"bookId\": 15\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -435,7 +458,7 @@
 					"response": []
 				},
 				{
-					"name": "register",
+					"name": "remove - requires auth token from login",
 					"event": [
 						{
 							"listen": "test",
@@ -446,12 +469,23 @@
 									"});",
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
 					"request": {
-						"method": "POST",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2MSwidXNlcm5hbWUiOiJkYnVlbmNvbnNlam8iLCJpYXQiOjE3NjE3NzE1NjAsImV4cCI6MTc2MTc3NTE2MH0.NY5MoixHD3MNsD-nlfkT_fhRZOHHzeZRHoOiPxP82zs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -463,13 +497,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/users/register",
+							"raw": "{{base_url}}/favorites/163",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"users",
-								"register"
+								"favorites",
+								"163"
 							]
 						},
 						"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
