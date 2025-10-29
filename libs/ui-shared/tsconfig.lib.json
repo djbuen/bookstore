@@ -29,6 +29,9 @@
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
     {
+      "path": "../../apps/bookstore-fe/tsconfig.app.json"
+    },
+    {
       "path": "../types/tsconfig.lib.json"
     }
   ]
