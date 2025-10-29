@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "apps/bookstore-fe/src/shared/hooks/useUser";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { isAuthenticated, logout } = useUser(); // get auth state and logout
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout(); // clear session/auth token
+    navigate("/login"); // redirect to login
+  };
 
   return (
     <header className="bg-white shadow-md p-4 flex justify-between items-center relative z-20">
@@ -53,20 +62,31 @@ const Header: React.FC = () => {
         >
           Books
         </Link>
-        <Link
-          to="/login"
-          className="block px-4 py-2 text-gray-600 hover:text-gray-800 md:inline-block"
-          onClick={() => setIsOpen(false)}
-        >
-          Login
-        </Link>
-        <Link
-          to="/register"
-          className="block px-4 py-2 text-gray-600 hover:text-gray-800 md:inline-block"
-          onClick={() => setIsOpen(false)}
-        >
-          Register
-        </Link>
+        {!isAuthenticated ? (
+          <>
+            <Link
+              to="/login"
+              className="block px-4 py-2 text-gray-600 hover:text-gray-800 md:inline-block"
+              onClick={() => setIsOpen(false)}
+            >
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="block px-4 py-2 text-gray-600 hover:text-gray-800 md:inline-block"
+              onClick={() => setIsOpen(false)}
+            >
+              Register
+            </Link>
+          </>
+        ) : (
+          <button
+            onClick={handleLogout}
+            className="block px-4 py-2 text-gray-600 hover:text-gray-800 md:inline-block"
+          >
+            Logout
+          </button>
+        )}
       </nav>
     </header>
   );
