@@ -35,7 +35,7 @@ const addFavorite = async (req: Request, res: Response) => {
 };
 
 const removeFavorite = async (req: Request, res: Response) => {
-  const favoriteId = parseInt(req.params.favoriteId);
+  const favoriteId = parseInt(req.params.favoriteID);
 
   try {
     await favoriteService.removeFavorite(favoriteId);
