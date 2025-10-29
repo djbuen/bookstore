@@ -20,7 +20,7 @@ const BookGrid: React.FC<BookGridProps> = ({ title, books, onFavorite, onClick, 
           )}
           {onSearch && (
             <div className="w-full sm:w-72">
-              <SearchField onSearch={onSearch} />
+              <SearchField onChange={onSearch} />
             </div>
           )}
         </div>

@@ -1,10 +1,11 @@
-import react from "react";
+import react, { useTransition, useRef } from "react";
 import { BookGrid, BookModal } from "@bookstore/ui-shared";
 import { useBooks } from "apps/bookstore-fe/src/shared/hooks/userBooks";
 
 const BooksPage: React.FC = () => {
-    const { books, loading, error} = useBooks();
+    const { books, loading, error, searchBook} = useBooks();
     const [selectedBook, setSelectedBook] = react.useState(null);
+    const [isPending, startTransition] = useTransition();
     const handleFavorite = (id: number) => {
         console.log(`Book ${id} favorited!`);
     };
@@ -12,8 +13,19 @@ const BooksPage: React.FC = () => {
         setSelectedBook(book);
     };
 
-    const onSearch = () => {
-        console.log(`Searching for ${book}`);
+    // this can still be improved by using useDebounce hook
+    const debounceRef = useRef<number | null>(null);
+    const onSearch = (keyword: string) => {
+        // clear previous timer
+        if (debounceRef.current) clearTimeout(debounceRef.current);
+
+        // set timer
+        debounceRef.current = window.setTimeout(() => {
+        startTransition(() => {
+            searchBook(keyword);
+            console.log(`Searching for ${keyword}`);
+        });
+        }, 400); // debounce delay
     };
 
     if (loading) return <div>Loading...</div>;
