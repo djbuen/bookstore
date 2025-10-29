@@ -1,6 +1,8 @@
 # Bookstore
 
 All the related documentation can be found under ./docs folder.
+
+# Demo
 [![Watch the video](https://img.youtube.com/vi/OWzI5jdTCh8/0.jpg)](https://www.youtube.com/watch?v=OWzI5jdTCh8)
 
 ## Run the app
