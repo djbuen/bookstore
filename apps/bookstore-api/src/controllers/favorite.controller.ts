@@ -3,7 +3,8 @@ import * as favoriteService from '../services/favorite.service';
 
 const getAllFavorites = async (req: Request, res: Response) => {
   try {
-    const favorites = await favoriteService.getAllFavorites();
+    const { userId } = res.locals.user;
+    const favorites = await favoriteService.getAllFavorites(userId);
     res.send({
       message: "Get all favorites",
       payload: req.params,
@@ -18,7 +19,8 @@ const getAllFavorites = async (req: Request, res: Response) => {
 };
 
 const addFavorite = async (req: Request, res: Response) => {
-  const { userId, bookId } = req.body;
+  const { bookId } = req.body;
+  const { userId } = res.locals.user;
 
   try {
     const favorite = await favoriteService.addFavorite({ userId, bookId });

@@ -2,8 +2,10 @@ import { Favorite } from "src/types/favorite.type";
 import { getPrisma } from "../utils/prisma.util";
 
 export class FavoriteModel {
-  static async getAll(): Promise<Favorite[]> {
-    return await getPrisma().favorite.findMany();
+  static async getAll(userId: number): Promise<Favorite[]> {
+    return await getPrisma().favorite.findMany({
+      where: { userId },
+    });
   }
   static async create(data: { userId: number; bookId: number }): Promise<Favorite> {
     return getPrisma().favorite.create({
