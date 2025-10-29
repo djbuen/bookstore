@@ -1,6 +1,6 @@
 import react, { useTransition, useRef } from "react";
 import { BookGrid, BookModal } from "@bookstore/ui-shared";
-import { useBooks } from "apps/bookstore-fe/src/shared/hooks/userBooks";
+import { useBooks } from "apps/bookstore-fe/src/shared/hooks/useBooks";
 
 const BooksPage: React.FC = () => {
     const { books, loading, error, searchBook} = useBooks();
