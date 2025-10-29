@@ -7,7 +7,7 @@ const BooksPage: React.FC = () => {
     const { books, loading, error, searchBook} = useBooks();
     const [selectedBook, setSelectedBook] = react.useState(null);
     const [isPending, startTransition] = useTransition();
-    const { favorites, getAllFavorites, addToFavorites, removeFromFavorites } = useFavorites();
+    const { favorites, getAllFavorites, addToFavorites, removeFromFavorites, setFavorites } = useFavorites();
     const onClickBook = (book) => {
         setSelectedBook(book);
     };
@@ -36,9 +36,17 @@ const BooksPage: React.FC = () => {
         const isFav = favorites.some((fav) => fav.bookId === bookId);
         if (isFav) {
             const fav = favorites.find((f) => f.bookId === bookId);
-            if (fav) removeFromFavorites(fav.id.toString());
+            // if (fav) removeFromFavorites(fav.id.toString());
+            if (fav) {
+                // remove immediately from state
+                setFavorites((prev) => prev.filter((f) => f.id !== fav.id));
+                removeFromFavorites(fav.id.toString());
+              }
         } else {
+            const newFav = { id: "temp-" + bookId, bookId: bookId }; // temp id
+            setFavorites((prev) => [...prev, newFav]);
             addToFavorites(bookId.toString());
+            // add immediately to state
         }
     };
 

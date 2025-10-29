@@ -2,3 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 /* You can add global styles to this file, and also import other style files */
+@keyframes slide-in {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+.animate-slide-in {
+    animation: slide-in 0.3s ease-out;
+}

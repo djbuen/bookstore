@@ -1,9 +1,6 @@
 import express, { Application } from 'express';
 import * as FavoriteController from '../controllers/favorite.controller';
 import { authenticate } from '../middlewares/auth.middleware';
-// =============================
-// Express App Setup
-// =============================
 const app: Application = express();
 
 app.get("/", authenticate, FavoriteController.getAllFavorites);

@@ -23,7 +23,7 @@ const addFavorite = async (req: Request, res: Response) => {
   const { userId } = res.locals.user;
 
   try {
-    const favorite = await favoriteService.addFavorite({ userId, bookId });
+    const favorite = await favoriteService.addFavorite({ userId, bookId: parseInt(bookId) });
     res.status(201).send({
       message: "Favorite added successfully",
       favorite,

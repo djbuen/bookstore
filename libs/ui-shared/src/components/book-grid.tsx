@@ -21,7 +21,6 @@ const BookGrid: React.FC<BookGridProps> = ({ title, books, favorites=[], onFavor
   const filteredBooks = useMemo(() => {
     if (selectedFilter === "Favorites") {
       const favoriteBookIds = favorites.map((fav) => fav.bookId);
-      console.log(favoriteBookIds, 'favoriteBookIds');
       return books.filter((book) => favoriteBookIds.includes(book.id));
     }
     return books;
@@ -47,9 +46,15 @@ const BookGrid: React.FC<BookGridProps> = ({ title, books, favorites=[], onFavor
         </div>
       )}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-        {filteredBooks.map((book) => (
-          <BookCard key={book.id} book={book} onFavorite={onFavorite} onClick={onClick}/>
-        ))}
+        {filteredBooks.map((book) => {
+          const isFavorite = favorites.some(fav => fav.bookId === book.id)
+          return (<BookCard
+            key={book.id}
+            book={book}
+            isFavorite={isFavorite}
+            onFavorite={onFavorite}
+            onClick={onClick}/>)
+        })}
       </div>
     </section>
   );

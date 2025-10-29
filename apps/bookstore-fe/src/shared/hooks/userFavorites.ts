@@ -54,6 +54,7 @@ export const useFavorites = () => {
     addToFavorites,
     removeFromFavorites,
     getAllFavorites,
+    setFavorites,
     error,
     isPending,
   };

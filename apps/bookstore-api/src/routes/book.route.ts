@@ -1,8 +1,5 @@
 import express, { Application } from 'express';
 import * as BookController from '../controllers/book.controller';
-// =============================
-// Express App Setup
-// =============================
 const app: Application = express();
 
 app.get("/", BookController.getAllBooks);

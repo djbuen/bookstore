@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Book } from "@bookstore/types";
+import { FavoriteButton, Toast } from "@bookstore/ui-shared";
+import { useFavorites } from "apps/bookstore-fe/src/shared/hooks/userFavorites";
 
 type BookCardProps = {
   book: Book;
+  isFavorite?: boolean;
   onFavorite?: (bookId: number) => void;
   onClick?: (book: Book) => void;
 };
 
-const BookCard: React.FC<BookCardProps> = ({ book, onFavorite, onClick }) => {
+const BookCard: React.FC<BookCardProps> = ({ book, isFavorite, onFavorite, onClick }) => {
+  const [favorite, setFavorite] = useState(isFavorite);
+  const [toastMessage, setToastMessage] = useState("");
+
+  const handleFavorite = () => {
+    setFavorite((prev) => !prev);
+    onFavorite?.(book.id);
+    setToastMessage(!favorite ? "Added to favorites" : "Removed from favorites");
+  };
   return (
+    <>
     <div className="
     bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200 max-h-100 flex flex-col
     hover:shadow-xl hover:scale-[1.03] transition-transform duration-300 ease-in-out
@@ -56,15 +68,12 @@ const BookCard: React.FC<BookCardProps> = ({ book, onFavorite, onClick }) => {
 
         <div className="flex items-center justify-between mt-auto">
           <span className="text-indigo-600 font-bold">${book.price.toFixed(2)}</span>
-          <button
-            onClick={() => onFavorite?.(book.id)}
-            className="text-gray-400 hover:text-red-500 transition-colors"
-          >
-            ❤️
-          </button>
+          <FavoriteButton isFavorite={favorite} onToggle={handleFavorite} />
         </div>
       </div>
     </div>
+    {toastMessage && <Toast message={toastMessage} />}
+    </>
   );
 };
 

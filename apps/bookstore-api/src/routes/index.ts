@@ -3,9 +3,6 @@ import cors from 'cors';
 import userRoute from './user.route';
 import bookRoute from './book.route';
 import favoriteRoute from './favorite.route';
-// =============================
-// Express App Setup
-// =============================
 const app: Application = express();
 
 app.use(cors());
