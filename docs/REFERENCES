@@ -85,3 +85,10 @@ https://codewave.com/insights/react-services-in-application/
 
 AXIOS BEST PRACTICE
 https://medium.com/@ShantKhayalian/best-practices-for-using-axios-to-make-http-requests-to-a-spring-backend-in-a-react-application-f20d52ef41d3
+
+LINK to RELATED ISSUES DURING DEVELOPMENT
+https://github.com/nrwl/nx/issues/13696
+https://stackoverflow.com/questions/75979038/nx-nrwl-node-generator-error-cannot-find-module-nx-src-utils-code-frames
+https://www.google.com/search?client=safari&rls=en&q=npx+nx+g+%40nx%2Fexpress%3Aresource+books+--project%3Dbookstore-api+++NX+++Unable+to+resolve+%40nx%2Fexpress%3Aresource.++Cannot+find+generator+%27resource%27+in+%2Fprivate%2Fvar%2Fwww%2Fbookstore%2Fnode_modules%2F%40nx%2Fexpress%2Fgenerators.json.+Pass+--verbose+to+see+the+stacktrace.&ie=UTF-8&oe=UTF-8
+
+https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://nx.dev/docs/troubleshooting/troubleshoot-nx-install-issues&ved=2ahUKEwiIjOmr_MmQAxWLITQIHVtVDdwQFnoECBgQAQ&usg=AOvVaw38vt0feZY-_jH1MIlq9FFi
