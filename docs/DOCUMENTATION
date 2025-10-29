@@ -29,5 +29,5 @@ This DB schema can found under apps/bookstore-api/prisma/schema.prisma
 2. UI menu items restructure
 3. books data can be saved in memory db for fast response like(redis, mongodb)
 4. test coverage 100%
-5. DB persistence on for production environment
-6. Docker compose multi environment setup
+5. DB persistence on for production environment or should be a separate service
+6. Docker multi environment setup
