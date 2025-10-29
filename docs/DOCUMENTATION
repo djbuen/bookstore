@@ -21,6 +21,8 @@ This DB schema can found under apps/bookstore-api/prisma/schema.prisma
 4. cross origin resource fe and api integration(common)
 5. prisma client, nx issue(configuration necessary)
 6. nx daemon process become zombie during development when not gracefully `docker compose down`
+7. docker compose up fails in first run
+8. limited time due to personal circumstances
 
 ### Enhancement that be can done in the next phase
 1. nodejs api file structure - services, api, models, routes, controllers can be group per resource in a single folder
