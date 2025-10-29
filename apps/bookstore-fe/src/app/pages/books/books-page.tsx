@@ -12,12 +12,16 @@ const BooksPage: React.FC = () => {
         setSelectedBook(book);
     };
 
+    const onSearch = () => {
+        console.log(`Searching for ${book}`);
+    };
+
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error loading books.</div>;
 
     return (
         <div>
-            <BookGrid title="Best Sellers" books={books} onFavorite={handleFavorite} onClick={onClickBook}/>
+            <BookGrid title="Best Sellers" books={books} onFavorite={handleFavorite} onClick={onClickBook} onSearch={onSearch}/>
             <BookModal book={selectedBook} onClose={() => setSelectedBook(null)} />
         </div>
     );
