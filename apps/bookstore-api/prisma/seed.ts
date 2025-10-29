@@ -40,7 +40,7 @@ async function main() {
       date_published: new Date('2023-01-15'),
       author: 'John Author',
       price: 19.99,
-      imageUrl: 'https://example.com/image1.jpg',
+      imageUrl: imageUrl,
     },
   });
 
@@ -51,7 +51,7 @@ async function main() {
       date_published: new Date('2022-12-10'),
       author: 'Jane Writer',
       price: 15.49,
-      imageUrl: 'https://example.com/image2.jpg',
+      imageUrl: imageUrl,
     },
   });
 
