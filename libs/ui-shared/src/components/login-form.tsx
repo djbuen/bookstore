@@ -9,10 +9,17 @@ interface LoginFormProps {
 const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading, error }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [formError, setFormError] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault(); // prevent page reload
+    if (!username.trim() || !password.trim()) {
+      setFormError("Username and password are required.");
+      return;
+    }
+
     onSubmit(e, username, password);
+    setFormError("");
   };
 
   return (
@@ -23,6 +30,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, loading, error }) => {
       <h2 className="text-xl font-bold mb-4">Login</h2>
 
       {error && <p className="text-red-500 mb-2">{error}</p>}
+      {formError && <p className="text-red-500 mb-2">{formError}</p>}
 
       <input
         type="text"
